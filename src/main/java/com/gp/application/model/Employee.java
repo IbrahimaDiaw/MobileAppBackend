@@ -31,8 +31,7 @@ public class Employee {
 	private BigInteger tel;
 	private float salaire;
 	@JsonProperty
-	private List<Departement> departement ;
-	
+	private List<Departement> departement ;	
 	
 	/**
 	 * 
