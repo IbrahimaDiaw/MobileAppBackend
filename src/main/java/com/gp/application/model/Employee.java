@@ -3,15 +3,12 @@
  */
 package com.gp.application.model;
 
-import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.util.List;
 import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 
 /**
@@ -28,10 +25,9 @@ public class Employee {
 	private String adresse;
 	private String email;
 	private String fonction;
-	private BigInteger tel;
+	private long tel;
 	private float salaire;
-	@JsonProperty
-	private List<Departement> departement ;	
+	private String departement ;	
 	
 	/**
 	 * 
@@ -51,8 +47,8 @@ public class Employee {
 	 * @param salaire
 	 * @param departement
 	 */
-	public Employee(String id, String prenom, String nom, String adresse, String email, String fonction, BigInteger tel,
-			float salaire, List<Departement> departement) {
+	public Employee(String id, String prenom, String nom, String adresse, String email, String fonction, long tel,
+			float salaire, String departement) {
 		super();
 		this.id = id;
 		this.prenom = prenom;
@@ -154,14 +150,14 @@ public class Employee {
 	/**
 	 * @return the tel
 	 */
-	public BigInteger getTel() {
+	public long getTel() {
 		return tel;
 	}
 
 	/**
 	 * @param tel the tel to set
 	 */
-	public void setTel(BigInteger tel) {
+	public void setTel(long tel) {
 		this.tel = tel;
 	}
 
@@ -182,14 +178,14 @@ public class Employee {
 	/**
 	 * @return the departement
 	 */
-	public List<Departement> getDepartement() {
+	public String getDepartement() {
 		return departement;
 	}
 
 	/**
 	 * @param departement the departement to set
 	 */
-	public void setDepartement(List<Departement> departement) {
+	public void setDepartement(String departement) {
 		this.departement = departement;
 	}
 
