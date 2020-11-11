@@ -4,7 +4,7 @@
 package com.gp.application.model;
 
 import java.security.SecureRandom;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 
@@ -17,28 +17,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Conges {
 
 	private String id = this.generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12);
-	private String date;
-	private float duree;
+	private String dateDebut;
+	private String dateFin;
 	private String nature;
 	@JsonProperty
-	private List<Employee> employee;
-	
-	
-	
+	private ArrayList<String> employee;
+
 	/**
 	 * @param id
-	 * @param date
-	 * @param duree
+	 * @param dateFin
+	 * @param dateDebut
 	 * @param nature
 	 * @param employee
 	 */
-	public Conges(String id, String date, float duree, String nature, List<Employee> employee) {
+	public Conges(String id, String dateDebut,String dateFin, String nature, @JsonProperty("employee") ArrayList<String> employee) {
 		super();
 		this.id = id;
-		this.date = date;
-		this.duree = duree;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
 		this.nature = nature;
-		this.employee = employee;
+        this.employee = employee;
 	}
 
 	/**
@@ -62,32 +60,33 @@ public class Conges {
 		this.id = id;
 	}
 
+	
 	/**
-	 * @return the date
+	 * @return the dateDebut
 	 */
-	public String getDate() {
-		return date;
+	public String getDateDebut() {
+		return dateDebut;
 	}
 
 	/**
-	 * @param date the date to set
+	 * @param dateDebut the dateDebut to set
 	 */
-	public void setDate(String date) {
-		this.date = date;
+	public void setDateDebut(String dateDebut) {
+		this.dateDebut = dateDebut;
 	}
 
 	/**
-	 * @return the duree
+	 * @return the dateFin
 	 */
-	public float getDuree() {
-		return duree;
+	public String getDateFin() {
+		return dateFin;
 	}
 
 	/**
-	 * @param duree the duree to set
+	 * @param dateFin the dateFin to set
 	 */
-	public void setDuree(float duree) {
-		this.duree = duree;
+	public void setDateFin(String dateFin) {
+		this.dateFin = dateFin;
 	}
 
 	/**
@@ -103,18 +102,20 @@ public class Conges {
 	public void setNature(String nature) {
 		this.nature = nature;
 	}
+    
 
 	/**
 	 * @return the employee
 	 */
-	public List<Employee> getEmployee() {
+	public ArrayList<String> getEmployee() {
 		return employee;
+		
 	}
 
 	/**
 	 * @param employee the employee to set
 	 */
-	public void setEmployee(List<Employee> employee) {
+	public void setEmployee(ArrayList<String> employee) {
 		this.employee = employee;
 	}
 

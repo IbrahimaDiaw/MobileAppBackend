@@ -6,6 +6,7 @@ package com.gp.application.controller;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ import com.gp.application.model.Conges;
 @RequestMapping("api/conges")
 public class CongesController {
 	
+	@Autowired
 	private CongesService congesService;
 	
 	@GetMapping("/")

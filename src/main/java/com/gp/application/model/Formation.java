@@ -21,8 +21,10 @@ public class Formation {
 	private float duree;
 	private String libelle;
 	@JsonProperty
-	private List<Employee> employee;
+	private List<String> employee;
 	
+	
+
 	/**
 	 * @param id
 	 * @param date
@@ -30,7 +32,7 @@ public class Formation {
 	 * @param libelle
 	 * @param employee
 	 */
-	public Formation(String id, String date, float duree, String libelle, List<Employee> employee) {
+	public Formation(String id, String date, float duree, String libelle,  @JsonProperty("employee") List<String> employee) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -38,6 +40,8 @@ public class Formation {
 		this.libelle = libelle;
 		this.employee = employee;
 	}
+
+
 
 	/**
 	 * 
@@ -104,17 +108,21 @@ public class Formation {
 		this.libelle = libelle;
 	}
 
+	
+
 	/**
 	 * @return the employee
 	 */
-	public List<Employee> getEmployee() {
+	public List<String> getEmployee() {
 		return employee;
 	}
+
+
 
 	/**
 	 * @param employee the employee to set
 	 */
-	public void setEmployee(List<Employee> employee) {
+	public void setEmployee(List<String> employee) {
 		this.employee = employee;
 	}
 

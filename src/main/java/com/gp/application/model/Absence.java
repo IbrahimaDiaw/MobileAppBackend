@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author Ibrahima Ibnu Omar
  *
@@ -17,7 +19,11 @@ public class Absence {
 	private String date;
 	private float duree;
 	private String motif;
-	private List<Employee> employee;
+	@JsonProperty
+	private List<String> employee;
+	
+	
+
 	
 	/**
 	 * @param id
@@ -26,7 +32,7 @@ public class Absence {
 	 * @param motif
 	 * @param employee
 	 */
-	public Absence(String id, String date, float duree, String motif, List<Employee> employee) {
+	public Absence(String id, String date, float duree, String motif,  @JsonProperty("employee") List<String> employee) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -35,7 +41,8 @@ public class Absence {
 		this.employee = employee;
 	}
 
-	
+
+
 	/**
 	 * 
 	 */
@@ -106,13 +113,13 @@ public class Absence {
 	 */
 	public void setMotif(String motif) {
 		this.motif = motif;
-	}
+	} 
 
 
 	/**
 	 * @return the employee
 	 */
-	public List<Employee> getEmployee() {
+	public List<String> getEmployee() {
 		return employee;
 	}
 
@@ -120,9 +127,10 @@ public class Absence {
 	/**
 	 * @param employee the employee to set
 	 */
-	public void setEmployee(List<Employee> employee) {
+	public void setEmployee(List<String> employee) {
 		this.employee = employee;
 	}
+
 
 
 	//fonction generatrice de cle primaire
