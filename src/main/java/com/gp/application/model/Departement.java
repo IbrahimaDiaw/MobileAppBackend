@@ -24,6 +24,7 @@ public class Departement {
 	private String id = this.generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12);
 	
 	private String nom;
+	private String  description;
 	
 	
 
@@ -71,6 +72,18 @@ public class Departement {
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 //fonction generatrice de cle primaire
